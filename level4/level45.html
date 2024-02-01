@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What does "dead beef" mean?</title>
+</head>
+<body style="font-family: Courier, monospace">
+    <div>
+    <h1><a href="https://stackoverflow.com/questions/2907262/what-does-dead-beef-mean">What does "dead beef" mean?</a></h1>
+    <p>Asked 13 years, 8 months ago &nbsp; &nbsp; Modified 8 months ago &nbsp; &nbsp; Viewed 161k times</p>
+    <br>
+    </div>
+    <div >
+        <p style="padding: 10px 50px 10px 0px; position: fixed">
+            <span style="font-size: 18px">133 upvotes</span><br>
+            <br>
+            What does the word "dead beef" mean? I read it from a interview question. 
+            It has something to do with ipv6. 
+            I figured it could be a random hex number used for examples, like "The quick brown fox jumps over the lazy dog".
+            <br> <br>
+            Is my understanding correct? Or it has more significant meaning?
+        </p>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <p>
+            <h2>8 Answers</h2>
+            <span style="font-size: 18px">144 upvotes</span> 
+            <br> <br>
+            <a href="http://en.wikipedia.org/wiki/Hexspeak">http://en.wikipedia.org/wiki/Hexspeak</a><br>
+            <a href="http://www.urbandictionary.com/define.php?term=dead%3Abeef">http://www.urbandictionary.com/define.php?term=dead%3Abeef</a><br>
+
+            "Dead beef" is a very popular sentence in programming, because it is built only from letters a-f, which are used in hexadecimal notation. 
+            Colons in the beginning and in the middle of the sentence make this sentence a (theoretically) valid IPv6 address.
+            <br>
+            <p style="font-size: 12px">edited Feb 15, 2018 at 14:12 NikxDa</p>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:10 Dustin Laine</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">94 upvotes</span><br><br>
+            The value of 0xDEADBEEF has three practical benefits, mostly for older systems. 
+            Old assembler/C hacks, like me, would use it to fill unallocated memory to coax out memory issues. 
+            Also, it's a pun of the slang term "dead meat". The programmer is dead meat if DEADBEEF winds up in his pointers. 
+            I congratulate the guy who first thought of using the value DEADBEEF. It's clever in many ways. <br>
+            As for practical reasons, firstly, it's more noticeable in a hex memory dump because it actually spells words as opposed to random hex values.<br>
+            Secondly, if the value winds up in a pointer, it's more likely to induce a memory out-of-range fault. 
+            An address of DEADBEEF was out of the address range of systems (we're talking last century systems now) regardless of the system's endian.<br>
+            Thirdly, it is more likely to induce a fault on systems that require even boundary pointer values for accessing 16/32/64-bit data. 
+            The value is more likely to fault because both of the 16 bit values (DEAD, BEEF) are odd.
+            <br>
+            <p style="font-size: 12px">edited Feb 9, 2016 at 11:21</p>
+            <p style="font-size: 12px">answered May 25, 2010 at 20:25 BSalita</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">59 upvotes</span><br><br>
+            It's a made up expression using only the letters A-F, often used when a recognisable hexadecimal number is required. 
+            Some systems use it for various purposes such as showing memory which has been freed and should not be referenced again. 
+            In a debugger this value showing up could be a sign that you have made an error. From <a href="https://en.wikipedia.org/wiki/Hexspeak">Wikipedia</a>:
+            <br>
+            &nbsp;&nbsp;&nbsp;
+            0xDEADBEEF ("dead beef") is used by IBM RS/6000 systems, Mac OS on 32-bit PowerPC processors and the Commodore Amiga as a magic debug value. 
+            On Sun Microsystems' Solaris, it marks freed kernel memory. On OpenVMS running on Alpha processors, DEAD_BEEF can be seen by pressing CTRL-T.
+            <br>
+            The number 0xDEADBEEF is equal to the less recognisable decimal number 3735928559 (unsigned) or -559038737 (signed).
+            <br>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:11 Mark Byers</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">26 upvotes</span><br><br>
+            Since IPv6-Adresses are written in Hex-notation you can use "Hexspeak" (numbers 0-9 and letters a-f) in Adresses.
+            <br>
+            There are a number of words you can use as valid adresses to better momorize them.
+            <br>
+            If you ping6 www.facebook.com -n you will get something like "2a03:2880:f01c:601:face:b00c:0:1".
+            <br>
+            Here are some examples:
+            <ul>
+                <li>:affe:: (Affe - German for Monkey - seen at a vlan for management board)</li>
+                <li>:1bad:babe:: (one bad babe - seen at a smtp-honeypot)</li>
+                <li>:badc:ab1e:: (bad cable - seen as subnet for a unsecure vlan)</li>
+                <li>:da7a:: (Data - seen for fileservers)</li>
+                <li>:d1a1:: (Dial - seen for VPN Dial-In)</li>
+            </ul>
+            <p style="font-size: 12px">
+                edited Feb 15, 2018 at 13:25
+            </p>
+            <p style="font-size: 12px">answered Jul 11, 2014 at 16:56 Martin Seitl</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">15 upvotes</span><br><br>
+            <p>It is also used for debugging purposes. <br>
+            Here is a handy list of some of these values: <br>
+            <a href="http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Magic_debug_values">http://en.wikipedia.org/wiki/Magic_number_%28programming%29#Magic_debug_values</a>
+            <br>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:10 Scott</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">4 upvotes</span><br><br>
+            People normally use it to indicate dummy values. I think that it primarily was used before the idea of NULL pointers. <br>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:09 Puppy</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">3 upvotes</span><br><br>
+            It's a magic number used in various places because it also happens to be readable in English, making it stand out. 
+            There's a partial list on <a href="http://en.wikipedia.org/wiki/Magic_number_(programming)">Wikipedia</a>.
+            <br>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:11 dsolimano</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            <span style="font-size: 18px">2 upvotes</span><br><br>
+            It was used as a pattern to store in memory as a series of hex bytes (0xde, 0xad, 0xbe, 0xef). 
+            You could see if memory was corrupted because of hardware failure, buffer overruns, etc.
+            <br>
+            <p style="font-size: 12px">answered May 25, 2010 at 18:11 Larry</p>
+        </p>    
+        </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
