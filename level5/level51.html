@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6/24/2022</title>
+</head>
+<style>
+    body{
+        font-family: Comic Sans MS, cursive;
+        background-color: #baa68e;
+        color: rgb(0, 0, 0);
+    }
+    .tile{
+        display: inline-block;
+        /* min-width: 100px;
+        min-height: 50px; */
+        padding: 10px;
+        /* background-color:blueviolet; */
+        position: absolute;
+        cursor: grab;
+    }
+    
+</style>
+<body>
+    <div class="tile">
+        <h2 style="line-height: 50%;">6/24/2022</h2>
+        <p>Sant'Elena, Venice</p>
+    </div>
+    <div class="tile">
+        Packed day today. 
+    </div>
+    <div class="tile">
+        Had <a href="https://www.labiennale.org/en/art/2022" target="_blank" style="text-decoration: none; color:black" >Biennale</a> discussion in the morning, 
+        <br>then ate <a href="https://maps.app.goo.gl/hvtr4oQNGKrJ6iRM7" target="_blank" style="text-decoration: none; color:black">lunch w/ Olivia </a>
+        <br>and picked up <a href="https://maps.app.goo.gl/F29LYcGQvKDtyDke9" target="_blank" style="text-decoration: none; color:black">sketchbooks</a> before heading to <a href="https://www.labiennale.org/en/venues/arsenale" target="_blank" style="text-decoration: none; color:black">Arsenale</a>. 
+    </div>
+    <div class="tile">
+        The artwork was insane. 
+        <br>
+        We saw such a <a href="https://www.labiennale.org/en/news/biennale-arte-2022-milk-dreams" target="_blank" style="text-decoration: none; color:black">well curated show.</a>
+        <br>Our <a href="https://arthistory.columbia.edu/content/alexander-alberro" target="_blank" style="text-decoration: none; color:black">prof</a> was able to show us thematic threads throughout each room 
+        <br>and I have a newfound appreciation for contemporary art. 
+        <br> I'm excited to go back and take a closer look at everything. 
+    </div>
+    <div class="tile">
+        <div>
+            <img src="images/sleigh.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        <br>
+        Then we went to <a href="https://www.ocean-space.org/" target="_blank" style="text-decoration: none; color:black">Ocean Space's</a> event where we went to a 
+        <a href="https://maps.app.goo.gl/FUppAgDgo1ZWPZFn9" target="_blank" style="text-decoration: none; color:black">park on the mainland</a> and talked about <a href="https://www.ocean-space.org/activities/5-una-sentinella-bivalve-e-linquinamento-chimico-in-laguna" target="_blank" style="text-decoration: none; color:black;">detecting pollution in clams</a>. 
+        <h1 style="letter-spacing: -1px;"><a href="https://www.researchgate.net/publication/356150897_Long-lasting_effects_of_chronic_exposure_to_chemical_pollution_on_the_hologenome_of_the_Manila_clam?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ" target="_blank" style="text-decoration: none; color:black">
+            I will never eat clams again,</h1> but learned a lot about them!</a>
+        <br>
+        <br>
+    </div>
+    <div class="tile">
+        <div>
+            <img src="images/clams.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        Beautiful sunset, long trip back, and Olivia and I decided to 
+            <h6><a href="https://maps.app.goo.gl/aDcKaRerizTxiQK26" target="_blank" style="text-decoration: none; color: black"> get takeout food</a> <br></h6>
+            <h5>& aperol spritzes <br></h5>
+            <h4>and <a href="https://maps.app.goo.gl/XYfsoT2YcP5BoCzr7"  target="_blank" style="text-decoration: none; color:black">sit by the river</a> to eat dinner. <br></h4>
+            <h3>It was <em>so</em> nice to talk to her about anything. <br></h3>
+            <h2>I am very grateful to get to know her. <br></h2>
+    </div>
+    <div class="tile">
+        <div>
+            <img src="images/spritz.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        <div>
+            <img src="images/sunset.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        let tiles = document.querySelectorAll('.tile');
+        let activeTile = null;
+        let initialX, initialY;
+
+        tiles.forEach(tile => {
+            tile.addEventListener('mousedown', startDrag);
+            tile.addEventListener('mouseup', endDrag);
+            tile.addEventListener('mousemove', drag);
+        });
+
+        function startDrag(e){
+            activeTile = this;
+            initialX = e.clientX - activeTile.offsetLeft;
+            initialY = e.clientY - activeTile.offsetTop;
+        }
+
+        function endDrag() {
+            activeTile = null;
+        }
+
+        function drag(e){
+            if(activeTile){
+                e.preventDefault();
+                let newX = e.clientX - initialX;
+                let newY = e.clientY - initialY;
+                activeTile.style.left = newX + 'px';
+                activeTile.style.top = newY + 'px';
+            }
+        }
+    });
+
+    // const tileElement = document.querySelector('.tile');
+    // tileElement.addEventListener('mousedown', function(event){
+    //     let initialX = event.clientX;
+    //     let initialY = event.clientY
+
+    //     function moveElement(event){
+    //         let currentX = event.clientX;
+    //         let currentY = event.clientY;
+
+    //         let deltaX = currentX - initialX;
+    //         let deltaY = currentY - initialY;
+
+    //         tileElement.style.left = tileElement.offsetLeft + deltaX + 'px';
+    //         tileElement.style.top = tileElement.offsetTop + deltaY + 'px';
+
+    //         initialX = currentX;
+    //         initialY = currentY;
+    //     }
+
+    //     function stopElement(event) {
+    //         document.removeEventListener('mousemove', moveElement);
+    //         document.removeEventListener('mouseup', stopElement);
+    //     }
+
+    //     document.addEventListener('mousemove', moveElement);
+    //     document.addEventListener('mouseup', stopElement);
+    // });
+</script>
+</html>
