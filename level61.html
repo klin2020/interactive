@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6/24/2022</title>
+</head>
+<style>
+    body{
+        font-family: Comic Sans MS, cursive;
+        background-color: #baa68e;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+    }
+    .tile{
+        display: inline-block;
+        /* min-width: 100px;
+        min-height: 50px; */
+        padding: 10px;
+        /* background-color:blueviolet; */
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        cursor: grab;
+    }
+
+    
+</style>
+<body>
+    <div class="tile">
+        <img src="images/header.png" alt="6/24/2022 Sant'Elena, Venice">
+    </div>
+    <div class="tile">
+        <img src="images/packed_day.png" alt="Packed day today.">
+    </div>
+    <div class="tile">
+        <img src="images/biennale_lunch_arsenale.png" alt="Had Biennale discussion in the morning, then ate lunch w/ Olivia and picked up sketchbooks before heading to Arsenale">
+    </div>
+    <div class="tile">
+        <img src="images/prof_excited.png" alt="we saw such a well curated show. Our prof was able to show us thematic threads throughout each room and I have a newfound appreciation for contemporary art.
+        I'm eexcited to go back and take a closer look at everything">
+    </div>
+    <div class="tile">
+        <div>
+            <img src="level5/images/sleigh.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        <img src="images/park_clams.png" alt="Then we went to OceanSpace's event where we went to a park on the mainland and talked about detecting pollution in clams">
+    </div>
+    <div class="tile">
+        <div>
+            <img src="level5/images/clams.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        <img src="images/dinner.png" alt="Beautiful sunset, long trip back, and Olivia and I decided to get takeout food & aperol spritzes and sit by the canal to eat dinner.">
+    </div>
+    <div class="tile">
+        <img src="images/talk.png" alt="It was so nice to talk to her about anything.">
+    </div>
+    <div class="tile">
+            <img src="images/grateful.png" alt="I am very grateful to get to know her">
+    </div>
+    <div class="tile">
+        <div>
+            <img src="level5/images/spritz.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    <div class="tile">
+        <div>
+            <img src="level5/images/sunset.JPG" style="width: 20% ; height: 20%">
+        </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        let tiles = document.querySelectorAll('.tile');
+        let activeTile = null;
+        let initialX, initialY;
+
+        tiles.forEach(tile => {
+            tile.addEventListener('mousedown', startDrag);
+            tile.addEventListener('mouseup', endDrag);
+            tile.addEventListener('mousemove', drag);
+        });
+
+        function startDrag(e){
+            activeTile = this;
+            initialX = e.clientX - activeTile.offsetLeft;
+            initialY = e.clientY - activeTile.offsetTop;
+        }
+
+        function endDrag() {
+            activeTile = null;
+        }
+
+        function drag(e){
+            if(activeTile){
+                e.preventDefault();
+                let newX = e.clientX - initialX;
+                let newY = e.clientY - initialY;
+                activeTile.style.left = newX + 'px';
+                activeTile.style.top = newY + 'px';
+            }
+        }
+    });
+
+    // const tileElement = document.querySelector('.tile');
+    // tileElement.addEventListener('mousedown', function(event){
+    //     let initialX = event.clientX;
+    //     let initialY = event.clientY
+
+    //     function moveElement(event){
+    //         let currentX = event.clientX;
+    //         let currentY = event.clientY;
+
+    //         let deltaX = currentX - initialX;
+    //         let deltaY = currentY - initialY;
+
+    //         tileElement.style.left = tileElement.offsetLeft + deltaX + 'px';
+    //         tileElement.style.top = tileElement.offsetTop + deltaY + 'px';
+
+    //         initialX = currentX;
+    //         initialY = currentY;
+    //     }
+
+    //     function stopElement(event) {
+    //         document.removeEventListener('mousemove', moveElement);
+    //         document.removeEventListener('mouseup', stopElement);
+    //     }
+
+    //     document.addEventListener('mousemove', moveElement);
+    //     document.addEventListener('mouseup', stopElement);
+    // });
+</script>
+</html>
