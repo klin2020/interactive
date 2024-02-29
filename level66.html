@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Red Herring</title>
+  </head>
+  <style>
+    body {
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+       color: rgb(198, 219, 252);
+    }
+
+    p{
+      font-size: 2rem;
+      flex-wrap: nowrap;
+      /* width: 80vw; */
+      text-align: left;
+      width: 10vw;
+    }
+    .p2{
+      font-size: 2rem;
+      text-align: right; 
+      right: 0;
+      /* width: 500px; */
+      flex-wrap: nowrap;
+    }
+
+    /* .image-container{
+        position: relative;
+        width: 100vh;
+        height: 100vw;
+    }
+
+    .hover-image {
+        position: absolute;
+        min-width: 5%;
+        min-height: 30%;
+    } */
+    .fish-class{
+      position: absolute;
+      min-width: 5%;
+    }
+
+  .gradient-background {
+      background: linear-gradient(300deg,#2351c4,#c7e1ff,#274871,#2cacc8,#6d8a75);
+      background-size: 300% 300%;
+      animation: gradient-animation 30s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    /* https://animated-gradient-background-generator.netlify.app/ */
+    /* https://scienceandtechnologyaustralia.org.au/this-climate-red-herring-is-old/ */
+    /* #fish-image {
+      
+    } */
+    
+    
+
+    
+  </style>
+  <body class="gradient-background">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image1' class="fish-class">
+    <iframe frameborder="0" scrolling="no" allow="autoplay" style="background-color: transparent;" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1089873/&share=1"></iframe>
+    <!-- <audio controls>
+      <source src = "https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1089873/&share=1" type="audio/mpeg">
+      test
+    </audio> -->
+    
+    <p>It was the early 80s, the height of the Cold War, 
+    when something strange began happening off the coast of Sweden. 
+    The navy reported a mysterious sound deep below the surface of the ocean. 
+    Again, and again, and again they would hear it near their secret military bases,
+      in their harbors, and up and down the Swedish coastline.
+    </p>
+    
+    <p>
+      After thorough analysis the navy was certain. The sound was an invasion into their waters, 
+      an act of war, the opening salvos of a possible nuclear annihilation. </p>
+    <p>
+      Or was it? 
+    </p>
+    <img src="images/redherring.png" alt="red herring print" id='fish-image4' class="fish-class">
+    <p>
+      Today, Annie McEwen pulls us down into a deep-sea mystery, one of international intrigue 
+      that asks you to consider the possibility that maybe, just maybe, your deepest beliefs could be as solid as...air.
+    </p>
+    <img src="images/redherring.png" alt="red herring print" id='fish-image3' class="fish-class">
+    <div class="p2">
+      <i>
+        This episode was reported by Annie McEwen and produced by Annie McEwen, 
+        Matt Kielty, and Sarah Qari, with sound design by Jeremy Bloom. 
+        <br>
+        Special thanks to Bosse Lindquist.
+        <br>
+        Support Radiolab by becoming a member today at <a href="https://pledge.wnyc.org/support/pledge-out">Radiolab.org/donate</a>.
+      </i>
+    </div>
+    <img src="images/redherring.png" alt="red herring print" id='fish-image5' class="fish-class">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image2' class="fish-class">
+
+    
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const my_img = document.getElementById('fish-image1');
+      const my_img2 = document.getElementById('fish-image2');
+      const my_img3 = document.getElementById('fish-image3');
+      const my_img4 = document.getElementById('fish-image4');
+      const my_img5 = document.getElementById('fish-image5');
+
+      my_img.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+
+      my_img2.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+
+      my_img3.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+
+      my_img4.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+
+      my_img5.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+    });
+  </script>
+</html>
+
+    
+    
+    
+
+
+      

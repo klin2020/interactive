@@ -1,89 +1,191 @@
 <!DOCTYPE html>
 <head>
-    <title>sit back and relax</title>
+    <title>look up</title>
 </head>
 <style>
-    body{
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+  @keyframes backgroundfade {
+    0% {
+      background-color:rgb(151, 213, 216);
     }
-</style>
-<body>
-    <canvas>
-
-    </canvas>
-</body>
-<script>
-    const canvas = document.querySelector('canvas');
-    const gui = new GUI();
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-class Wave {
-  constructor(
-    canv,
-    maxAmplitude = 100,
-    length = 100,
-    frequency = 8,
-    bgOpacity = 0.03,
-    y,
-  ) {
-    this.canvas = canv;
-    this.ctx = this.canvas.getContext('2d');
-    this.maxAmplitude = maxAmplitude;
-    this.amplitude = 0;
-    this.length = length;
-    this.frequency = frequency;
-    this.increment = Math.random() * 360;
-    this.bgOpacity = bgOpacity;
-    this.y = y || this.canvas.height / 2;
-
-    this.frameCallback = () => {
-      this.draw(this.ctx);
-      requestAnimationFrame(this.frameCallback);
-    };
-  }
-
-  draw(c) {
-    c.beginPath();
-
-    this.ctx.fillStyle = `rgba(0,0,0,${this.bgOpacity})`;
-    this.ctx.strokeStyle = `hsl(${this.increment * 20}, 80%, 70%)`;
-
-    c.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-    c.moveTo(0, this.canvas.height / 2);
-
-    for (let i = 0; i < this.canvas.width; i += 1) {
-      c.lineTo(
-        i,
-        this.y + Math.sin(i / this.length + this.increment) * this.amplitude,
-      );
+    75%
+    {
+      background-color:cadetblue;
     }
-
-    c.stroke();
-    c.closePath();
-
-    this.amplitude = Math.sin(this.increment) * this.maxAmplitude;
-    this.increment -= this.frequency / 1000;
+    100% {
+      background-color: rgb(151, 213, 216);
+      /* rgb(71, 160, 165); */
+    }
   }
 
-  animate() {
-    this.frameCallback();
+  body {
+    animation-name: backgroundfade;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
   }
+
+  @keyframes colorfade {
+    0%{
+      background-color: rgb(158, 211, 213);
+      filter: blur(100px);
+    }
+    20%{
+      background-color: rgb(186, 192, 217);
+      filter: blur(46px);
+    }
+    56%{
+      background-color: rgb(172, 176, 189);
+      filter: blur(60px);
+    }
+    84%{
+      background-color: rgb(177, 189, 230);
+      filter: blur(35px);  
+    }
+    100%{
+      background-color: rgb(158, 194, 195);
+      filter: blur(100px);
+    }
+  }
+  @keyframes moveRight {
+    0% {left: 0;}
+    100%{left: calc(100% - 100px);}
+  }
+
+  .star_12 {
+  background: rgb(158, 194, 195);
+  width: 160px;
+  height: 40px;
+  position: relative;
 }
 
-const wave = new Wave(canvas, 150, 200, -8);
+.star_12:before,
+.star_12:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 40px;
+  background:  rgb(158, 194, 195);
+}
 
-gui.add(wave, 'maxAmplitude', 0, canvas.height / 2);
-gui.add(wave, 'length', 0, canvas.width);
-gui.add(wave, 'frequency', -50, 50);
-gui.add(wave, 'bgOpacity', 0, 1);
-gui.add(wave, 'y', 0, canvas.height);
+.star_12:before {
+  transform: rotate(60deg);
+}
+.star_12:after {
+  transform: rotate(30deg);
+}.star_12 {
+  background:  rgb(158, 194, 195);
+  width: 160px;
+  height: 40px;
+  position: relative;
+}
 
-wave.animate();
+.star_12:before,
+.star_12:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 40px;
+  background:  rgb(158, 194, 195);
+}
 
-</script>
+.star_12:before {
+  transform: rotate(60deg);
+}
+.star_12:after {
+  transform: rotate(30deg);
+}
+
+  .animation {
+    width: 120vw;
+    position: absolute;
+    left: 10vw;
+    animation: moveRight 100s linear infinite;
+  }
+
+  .animation div {
+    border-radius: 50%;
+    width: 160px;
+    height: 40px;
+    display: inline-block;
+    filter: blur(50px);
+    animation-name: colorfade;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+  }
+
+  .animation div:nth-child(2n)
+  {
+    margin-left: 1vw;
+    margin-bottom: 2vw;
+  }
+  .animation div:nth-child(3n) {
+    margin-left: 2vw;
+    margin-bottom: -3vw;
+  }
+  .animation div:nth-child(5n){
+    margin-left: 4vw;
+    margin-bottom: 4vw;
+  }
+  .animation div:nth-child(7n) {
+    margin-left: 8vw;
+    margin-bottom: -5vw;
+  }
+  .animation div:nth-child(12n) {
+    margin-left: 8vw;
+    margin-bottom: -11vw;
+  }
+  .animation div:nth-child(2n){
+    animation-delay: 2s;
+  }
+  .animation div:nth-child(3n){
+    animation-delay: 2.5s;
+  }
+  
+
+
+
+</style>
+<body>
+    <div class = 'animation'>
+      <div class="star_12">
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div class="star_12">
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+    </div>
+</body>
 </html>
