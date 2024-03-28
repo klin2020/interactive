@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>9 Fun Facts about Dachshund</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
     body{
@@ -28,37 +29,75 @@
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
+        scrollbar-color: #000000 #2c1f0c;
+        scrollbar-width: 1000px;
+        /* background-image: url('images/sausage.png');  */
     }
+
 
 </style>
 <body>
+    <audio id="audio1">
+        <source src="bark1.m4a" type="audio/mp4">
+    </audio>
+    <audio id="audio2">
+        <source src="bark2.m4a" type="audio/mp4">
+    </audio>
+    <audio id="audio3">
+        <source src="bark3.m4a" type="audio/mp4">
+    </audio>
     <h1 style="position: absolute; bottom: 2%; right: 5%">9 Fun Facts about Dachshund</h1>
-    <div class="scroll" style="position: absolute; top: 22%; right: 20%">
+    <div class="scroll" id='bark1' style="position: absolute; top: 25%; right: 20%">
         They were bred to hunt badgers. The name “Dachshund” is actually German for “badger dog.” Dachshunds&#x27; short legs keep them low to the ground to track scents, and their narrow bodies allow them to crawl into burrows, looking for badgers. Despite their small size, Dachshunds are brave and fierce. Over time, they were bred in different varieties to hunt different kinds of prey.
     </div>
-    <div class="scroll" style="position: absolute; top: 5%; left: 5%; width: 280px">
+    <div class="scroll" id='bark2' style="position: absolute; top: 5%; left: 5%; width: 280px; scrollbar-color: #ffffff #2c1f0c;">
         They come in two sizes. Breeders created two different sizes of Dachshunds — standard and miniature. The standard Dachshunds weigh up to 35 pounds and were used to hunt badgers and wild boars. The miniatures weigh up to 11 pounds.
     </div>
-    <div class="scroll" style="position: absolute; top: 70%; left: 49%">
+    <div class="scroll" id='bark3' style="position: absolute; top: 70%; left: 49%">
         They Have Three Different Types of Coats. Dachshunds can have smooth, wirehaired, or longhaired coats. All Dachshunds used to have smooth coats, and the smooth variety is still the most popular. Breeders probably crossed smooth Dachshunds with other dog breeds to produce the two other coat varieties.   
     </div> 
-    <div class="scroll" style="position: absolute; top: 40%; left: 30%; width: 475px">
+    <div class="scroll" id='bark1' style="position: absolute; top: 40%; left: 30%; width: 475px; scrollbar-color: #885a15 #2c1f0c;">
         The Dog (Not the Hot Dog) Came First. Dachshunds are sometimes called “wiener dogs” because their long bodies resemble hot dogs. But would you believe that the original name for the hot dog may have been the Dachshund sausage? The deli product received its name because it resembled the dog breed. The name was later shortened to “hot dog.”
     </div> 
-    <div class="scroll" style="position: absolute; top: 66%; left: 1%;">
+    <div class="scroll" id='bark2' style="position: absolute; top: 66%; left: 1%; scrollbar-color: #885a15 #2c1f0c;">
         They Were Temporarily Rebranded During World War I. Dachshunds were associated with Germany during World War I because they were used in a lot of propaganda, and Kaiser Wilhelm II had a well-known love for Dachshunds. This association led to a decline in the breed&#x27;s popularity in America. To counteract this effect, the AKC tried rebranding Dachshunds as “badger dogs,” among other names, but that didn&#x27;t stick.
     </div> 
-    <div class="scroll" style="position: absolute; bottom: 13%; right: 30%; width: 440px">
+    <div class="scroll" id='bark3' style="position: absolute; bottom: 13%; right: 30%; width: 440px; scrollbar-color: #a4a4a4 #2c1f0c;">
         A Dachshund Was the First Olympic Mascot. The official mascot of the 1972 Munich Olympic Games was a colorful Dachshund named Waldi. This was the first time the Olympics had a mascot. Olympic officials actually plotted that year&#x27;s marathon route in the shape of a Dachshund.
     </div>
-    <div class="scroll" style="position: absolute; top: 10%; right: 5%; width: 340px">
+    <div class="scroll" id='bark1' style="position: absolute; top: 10%; right: 5%; width: 340px">
         There Are Dachshund Races. Dachshund races started in Australia in the 1970s and have since spread around the world. The Wienerschnitzel Weiner Nationals have been going on every year in Southern California since 1995. It’s not a very serious sport, since Dachshunds were never meant to be racing dogs, but it sure is a hoot.
     </div>
-    <div class="scroll" style="position: absolute; top: 55%; left: 10%;">
+    <div class="scroll" id='bark2' style="position: absolute; top: 55%; left: 10%; scrollbar-color: #885a15 #2c1f0c;">
         Several Dachshunds Have Been the “World&#x27;s Oldest Dog.” Dachshunds typically live between 12 and 15 years, longer than most dog breeds. Of the numerous dogs to hold the Guinness World Record for the oldest living dog, a few have been Dachshunds. A Dachsie named Chanel held the record until 2009, when she died at 21 years old. In 2013, another Dachshund named Scolly, who also lived to be 20, held the title.
     </div>
-    <div class="scroll" style="position: absolute; top: 20%; left: 10%;">
+    <div class="scroll" id='bark3' style="position: absolute; top: 20%; left: 10%; scrollbar-color: #a4a4a4 #2c1f0c;">
         Britain&#x27;s First Cloned Dog Was a Dachshund. The first British dog to be successfully cloned was a Dachshund named Winnie. Winnie’s owner entered a contest to win the chance to have her dog cloned—a procedure that would usually cost over £60,000. Scientists took a skin sample from Winnie and created Mini Winnie. Her owner says Mini Winnie looks exactly like Winnie looked when she was a puppy. Mini Winnie is quite healthy and is expected to live a long life.
     </div>
 </body>
+<script>
+
+    // function playAudio()
+    // {
+    //     var audio = document.getElementById("audio");
+    //     audio.play();
+    // }
+    document.body.addEventListener("click", function(event){
+        var clicked = event.target.id;
+        if(clicked == 'bark1'){
+            var audio = document.getElementById("audio1");
+        }
+        else if(clicked == 'bark2')
+        {
+            var audio = document.getElementById("audio2");
+        }
+        else
+        {
+            var audio = document.getElementById("audio3");
+        }
+        audio.play();
+    });
+</script>
+
+
 </html>

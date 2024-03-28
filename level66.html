@@ -9,6 +9,10 @@
     body {
        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
        color: rgb(198, 219, 252);
+       margin: 0;
+       height: 100%;
+       /* background-color: rgb(0, 27, 46); */
+       background-color: rgb(33, 39, 56);
     }
 
     p{
@@ -16,27 +20,10 @@
       flex-wrap: nowrap;
       /* width: 80vw; */
       text-align: left;
-      width: 10vw;
-    }
-    .p2{
-      font-size: 2rem;
-      text-align: right; 
-      right: 0;
-      /* width: 500px; */
-      flex-wrap: nowrap;
+      padding-left: 20px;
+      width: 25vw;
     }
 
-    /* .image-container{
-        position: relative;
-        width: 100vh;
-        height: 100vw;
-    }
-
-    .hover-image {
-        position: absolute;
-        min-width: 5%;
-        min-height: 30%;
-    } */
     .fish-class{
       position: absolute;
       min-width: 5%;
@@ -45,7 +32,7 @@
   .gradient-background {
       background: linear-gradient(300deg,#2351c4,#c7e1ff,#274871,#2cacc8,#6d8a75);
       background-size: 300% 300%;
-      animation: gradient-animation 30s ease infinite;
+      animation: gradient-animation 15s ease infinite;
     }
 
     @keyframes gradient-animation {
@@ -64,50 +51,113 @@
     /* #fish-image {
       
     } */
+
+  .audio-player {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    padding-left: 20px;
+  }
+
+
+  .header{
+    background-color: white;
+    color: #6d8a75;
+    font-size: 3rem;
+  }
+  .scrollbox{
+    display: inline-block;
+    overflow-y: auto;
+    width: 30vw;
+    height: 80vh;
+  }
+
+  .title{
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(198, 219, 252);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    padding-left: 25px;
+    transform-origin: 100% 100%;
+    /* top: 50%; */
+    right: 20px;
+    white-space: nowrap;
+  }
+
+
+  @media all and (max-height: 675px){
+    .scrollbox{
+      display: inline-block;
+      overflow-y: auto;
+      overflow-x: auto;
+      width: 40vw;
+      height: 65vh;
+    }
+    .title{
+      font-size: 20px;
+    }
+  }
     
     
 
     
   </style>
-  <body class="gradient-background">
-    <img src="images/redherring.png" alt="red herring print" id='fish-image1' class="fish-class">
-    <iframe frameborder="0" scrolling="no" allow="autoplay" style="background-color: transparent;" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1089873/&share=1"></iframe>
-    <!-- <audio controls>
-      <source src = "https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1089873/&share=1" type="audio/mpeg">
-      test
-    </audio> -->
+  <body >
     
-    <p>It was the early 80s, the height of the Cold War, 
-    when something strange began happening off the coast of Sweden. 
-    The navy reported a mysterious sound deep below the surface of the ocean. 
-    Again, and again, and again they would hear it near their secret military bases,
-      in their harbors, and up and down the Swedish coastline.
-    </p>
-    
-    <p>
-      After thorough analysis the navy was certain. The sound was an invasion into their waters, 
-      an act of war, the opening salvos of a possible nuclear annihilation. </p>
-    <p>
-      Or was it? 
-    </p>
-    <img src="images/redherring.png" alt="red herring print" id='fish-image4' class="fish-class">
-    <p>
-      Today, Annie McEwen pulls us down into a deep-sea mystery, one of international intrigue 
-      that asks you to consider the possibility that maybe, just maybe, your deepest beliefs could be as solid as...air.
-    </p>
-    <img src="images/redherring.png" alt="red herring print" id='fish-image3' class="fish-class">
-    <div class="p2">
-      <i>
-        This episode was reported by Annie McEwen and produced by Annie McEwen, 
-        Matt Kielty, and Sarah Qari, with sound design by Jeremy Bloom. 
-        <br>
-        Special thanks to Bosse Lindquist.
-        <br>
-        Support Radiolab by becoming a member today at <a href="https://pledge.wnyc.org/support/pledge-out">Radiolab.org/donate</a>.
-      </i>
+    <div class="audio-player">
+      <audio controls src="https://waaa.wnyc.org/758af4c0-a2c3-47ec-a2d8-05f41bfbde51/episodes/c8103324-26f1-41c6-90dd-860c97b04fab/audio/128/default.mp3/default.mp3_ywr3ahjkcgo_4e62245e05b45c6cdaa55571888d4748_36172000.mp3?awCollectionId=758af4c0-a2c3-47ec-a2d8-05f41bfbde51&awEpisodeId=c8103324-26f1-41c6-90dd-860c97b04fab&hash_redirect=1&x-total-bytes=36172000&x-ais-classified=streaming&listeningSessionID=0CD_382_84__a0ef25663a3297675d2cbd5826ebfd3b280fa663">
+      </audio>
     </div>
-    <img src="images/redherring.png" alt="red herring print" id='fish-image5' class="fish-class">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image1' class="fish-class">
+    <img src="images/redherring.png" style="transform: scaleX(-1)" alt="red herring print" id='fish-image7' class="fish-class">
+    <img src="images/redherring.png" style="transform: scaleX(-1)" alt="red herring print" id='fish-image3' class="fish-class">
+    <img src="images/redherring.png" style="transform: scaleX(-1)" alt="red herring print" id='fish-image9' class="fish-class">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image10' class="fish-class">
+    <img src="images/redherring.png" style="transform: scaleX(-1)" alt="red herring print" id='fish-image4' class="fish-class">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image8' class="fish-class">
+    <img src="images/redherring.png" style="transform: scaleX(-1)" lt="red herring print" id='fish-image5' class="fish-class">
     <img src="images/redherring.png" alt="red herring print" id='fish-image2' class="fish-class">
+    <img src="images/redherring.png" alt="red herring print" id='fish-image6' class="fish-class">
+    <div class="title">
+      <a href="https://radiolab.org/podcast/red-herring" target="_blank" style="color: inherit;">Radio Lab
+      Feb 19, 2021
+      Red Herring</a>
+    </div>
+
+    <div class="scrollbox">
+      <p>It was the early 80s, the height of the Cold War, 
+      when something strange began happening off the coast of Sweden. 
+      The navy reported a mysterious sound deep below the surface of the ocean. 
+      Again, and again, and again they would hear it near their secret military bases,
+        in their harbors, and up and down the Swedish coastline.
+      </p>
+      <p>
+        After thorough analysis the navy was certain. The sound was an invasion into their waters, 
+        an act of war, the opening salvos of a possible nuclear annihilation. </p>
+      <p>
+        Or was it? 
+      </p>
+      <p>
+        Today, Annie McEwen pulls us down into a deep-sea mystery, one of international intrigue 
+        that asks you to consider the possibility that maybe, just maybe, your deepest beliefs could be as solid as...air.
+      </p>
+      <p>
+        <i>
+          This episode was reported by Annie McEwen and produced by Annie McEwen, 
+          Matt Kielty, and Sarah Qari, with sound design by Jeremy Bloom. 
+          <br>
+          Special thanks to Bosse Lindquist.
+          <br>
+          Support Radiolab by becoming a member today at <a href="https://pledge.wnyc.org/support/pledge-out">Radiolab.org/donate</a>.
+        </i>
+      </p>
+    </div>
+
 
     
   </body>
@@ -119,6 +169,11 @@
       const my_img3 = document.getElementById('fish-image3');
       const my_img4 = document.getElementById('fish-image4');
       const my_img5 = document.getElementById('fish-image5');
+      const my_img6 = document.getElementById('fish-image6');
+      const my_img7 = document.getElementById('fish-image7');
+      const my_img8 = document.getElementById('fish-image8');
+      const my_img9 = document.getElementById('fish-image9');
+      const my_img10 = document.getElementById('fish-image10');
 
       my_img.addEventListener('mouseover', function(){
         const newX = Math.random() * (window.innerWidth - this.width);
@@ -161,6 +216,52 @@
       });
 
       my_img5.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+
+      my_img6.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+      my_img7.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+      my_img8.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+      my_img9.addEventListener('mouseover', function(){
+        const newX = Math.random() * (window.innerWidth - this.width);
+        const newY = Math.random() * (window.innerHeight - this.height);
+        const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+
+        this.style.left = newX + 'px';
+        this.style.top = newY + 'px';
+        this.style.width = newSize + '%';
+      });
+      my_img10.addEventListener('mouseover', function(){
         const newX = Math.random() * (window.innerWidth - this.width);
         const newY = Math.random() * (window.innerHeight - this.height);
         const newSize = Math.floor(Math.random() * (50 - 5 + 1)) + 5;

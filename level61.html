@@ -11,7 +11,7 @@
         justify-content: center;
     }
     .tile{
-        display: inline-block;
+        display: inline;
         /* min-width: 100px;
         min-height: 50px; */
         padding: 10px;
@@ -20,6 +20,9 @@
         top: 30%;
         left: 30%;
         cursor: grab;
+        width: 20%;
+        height: 20%;
+        /* remove tile class and put it in the image itself rather than wrapper */
     }
 
     
@@ -39,9 +42,7 @@
         I'm eexcited to go back and take a closer look at everything">
     </div>
     <div class="tile">
-        <div>
-            <img src="level5/images/sleigh.JPG" style="width: 20% ; height: 20%">
-        </div>
+        <img src="level5/images/sleigh.JPG" style="width: 20% ; height: 20%">
     </div>
     <div class="tile">
         <img src="images/park_clams.png" alt="Then we went to OceanSpace's event where we went to a park on the mainland and talked about detecting pollution in clams">

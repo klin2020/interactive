@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>How to Play Sardines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
     body{
@@ -13,7 +14,7 @@
     }
     .header
     {
-        font-size: large;
+        font-size: 20px;
     }
     .instructions {
         display: grid;
@@ -30,14 +31,11 @@
         border: 1px solid #000000;
         border-radius: 15px; /* Adjust the radius as needed */
         overflow: hidden; /* Ensure content doesn't overflow rounded corners */
-        /* backface-visibility: hidden;
-        transition: transform 0.5s;
-        transform-style: preserve-3d; */
         position: relative;
     }
     .instruction-text{
         line-height: 1.5;
-        font-size:medium;
+        font-size: medium;
     }
     .grid-image{
         position: absolute;
@@ -59,33 +57,6 @@
         opacity: 1;
     }
 
-
-    /* .grid-item .hover-image{
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: opacity 0.3s ease;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        
-    } */
-    /* .grid-item:hover .hover-image {
-        opacity: 1;
-    }
-
-    .back{
-        transform: rotateY(180deg);
-    }
-    .flipper{
-        transition: transform 0.5s;
-        transform-style: preserve-3d;
-    }
-    .grid-item.flipped .flipper{
-        transform: rotateY(180deg);
-    } */
-
     @media all and (max-width: 950px){
         /* shrink to two */
         .instructions{
@@ -94,7 +65,28 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 5px;
         }
+        .header{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-size: 30;
+        }
     } 
+    @media all and (min-width: 1200px){
+        .instructions{
+            display: grid;
+            flex-wrap: nowrap;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-size: 20;
+        }
+    }
+    
  
 </style>
 <body>
@@ -119,7 +111,7 @@
        <h2>Part 1 Starting the Game </h2>
        <div class="instructions">
             <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                <img src="images/matiz.png" class="grid-image">
+                <img src="images/matiz.png" class="grid-image" id="img1">
                 <span class="grid-text">
                     <i style="font-size: large">Set up boundaries for the game. </i>
                     <div class="instruction-text">
@@ -132,7 +124,7 @@
             </div>
 
             <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                <img src="images/matiz.png" class="grid-image">
+                <img src="images/matiz_spicy.png" class="grid-image" id="img2">
                 <span class="grid-text">
                     <i style="font-size: large">Make the house as dark as possible.</i> 
                     <div class="instruction-text">
@@ -147,7 +139,7 @@
             </div>
 
             <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                <img src="images/matiz.png" class="grid-image">
+                <img src="images/matiz_lemon.png" class="grid-image" id="img3">
                 <span class="grid-text">
                     <i style="font-size: large">Choose one person to be “it.”</i> 
                     <div class="instruction-text">
@@ -160,7 +152,7 @@
             </div>
             
             <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                <img src="images/matiz.png" class="grid-image">
+                <img src="images/matiz.png" class="grid-image" id="img4">
                 <span class="grid-text">
                     <i style="font-size: large">Find a good place to hide. </i>
                     <div class="instruction-text">
@@ -175,13 +167,14 @@
             </div>
 
             <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                <img src="images/matiz.png" class="grid-image">
+                <img src="images/matiz.png" class="grid-image" id="img5">
                 <span class="grid-text">
                     <i style="font-size: large">Count to 50 or 100. </i>
                     <div class="instruction-text"> 
                     While the chosen person hides inside, the people left outside count to 50 or 100. T
                     hey should do this slowly to give the person hiding some time to find and get into a spot. 
                     If you have a larger playing area, like a big house or yard, you will want to give the person hiding more time.
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </div>
                 </span>
             </div>
@@ -198,7 +191,7 @@
         <h2>Part 2 Finding the “Sardine”</h2>
             <div class="instructions">
                 <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                    <img src="images/matiz.png" class="grid-image">
+                    <img src="images/matiz.png" class="grid-image" id="img6">
                     <span class="grid-text">
                         <i style="font-size: large">Go find the person hiding. </i>
                         <div class="instruction-text"> 
@@ -213,7 +206,7 @@
                 </div>
                 
                 <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                    <img src="images/matiz.png" class="grid-image">
+                    <img src="images/matiz.png" class="grid-image" id="img7">
                     <span class="grid-text">
                         <i style="font-size: large">Ask, "Are you the sardine?” to the person hiding. </i>
                         <div class="instruction-text" style="line-height: 1;"> 
@@ -226,7 +219,7 @@
                 </div>
 
                 <div class="grid-item" onmouseover="changeContent(this)" onmouseout="resetContent(this)">
-                    <img src="images/matiz.png" class="grid-image">
+                    <img src="images/matiz.png" class="grid-image" id="img8">
                     <span class="grid-text">
                         <i style="font-size: large">Continue hiding until one person is left. </i>
                         <div class="instruction-text" style="line-height: .75;"> 
@@ -234,6 +227,8 @@
                         This continues until there is only one person left. Whoever is last becomes the next hider or sardine. 
                         Depending on the number of people playing, packing everyone into one space can be both difficult and amusing.
                         If you&#39re the last person to find the original hider and everyone else, you become it for the next game.
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <br><br><br><br><br><br><br><br><br><br><br>
                         </div>
                     </span>
                 </div>
@@ -248,23 +243,23 @@
         <div class="instructions">
                 <div class="grid-item">
                     <i>Question</i> If there is one seeker left, does everyone come out of the hiding spot, or does the seeker have to find everyone?
-                    <br>
+                    <br><br>
                     <b>GlitterGirl01</b> <i>Community Answer</i> The seeker must find everyone; he/she then becomes 'It' for the next round.
-                    <br>
+                    <br><br>
                     <i>Helpful</i> 64 <i>Not Helpful</i> 19
                 </div>
                 <div class="grid-item">
                     <i>Question</i> How many players are needed?
-                    <br> 
+                    <br> <br>
                     <i>Community Answer</i> You can play with however many you want. If you have a lot of players, you can play in groups of two or three.
-                    <br>
+                    <br><br>
                     <i>Helpful</i> 56 <i>Not Helpful</i> 22
                 </div>
                 <div class="grid-item">
                     <i>Question</i> What if the people can't find me and give up?
-                    <br>
+                    <br><br>
                     <i>Community Answer</i> You can set up an exact amount of time for the game. Plan a spot where you'll all meet up if the time runs out and no one has found you.
-                    <br>
+                    <br><br>
                     <i>Helpful</i> 72 <i>Not Helpful</i> 26
                 </div>
             </div>
@@ -282,15 +277,28 @@
         item.querySelector('.grid-image').style.opacity = '1';
         item.querySelector('.grid-text').style.opacity = '0';
     }
-    // function flipGridItem(){
-    //     var container = document.querySelector('.grid-item');
-    //     container.classList.toggle('flipped')
-    // }
-    // function showImage(this){
-    //     var image = document.createElement('img');
-    //     image.src = 'images/tintop.png'
-    //     item.innerHTML = '';
-    //     item.appendChild(image)
-    // }
+    
+    var imgSources = [
+        "images/matiz_spicy.png",
+        "images/matiz.png",
+        "images/matiz_lemon.png"
+    ];
+    var randomIndex = Math.floor(Math.random() * 3);
+    document.getElementById('img1').src = imgSources[randomIndex];
+    document.getElementById('img8').src = imgSources[randomIndex];
+    document.getElementById('img3').src = imgSources[randomIndex];
+
+
+    randomIndex = Math.floor(Math.random() * 3);
+    document.getElementById('img2').src = imgSources[randomIndex];
+    document.getElementById('img5').src = imgSources[randomIndex];
+    document.getElementById('img6').src = imgSources[randomIndex];
+
+
+    randomIndex = Math.floor(Math.random() * 3);
+    document.getElementById('img7').src = imgSources[randomIndex];
+    document.getElementById('img4').src = imgSources[randomIndex];
+
+
 </script>
 </html>
