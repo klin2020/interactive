@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tool for ONe</title>
+    <link rel="icon" type="image/png" href="images/icon.png"/>
+  </head>
+  <style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0; 
+        height: 100%; 
+        overflow: hidden
+    }
+    .button-wrapper{
+        position: fixed;
+        text-align: center;
+        top: 70%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+    }
+    button{
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: inherit;
+    }
+    button.bbutton {
+        padding: 0.5em 1.5em;
+        border: 2px solid;
+        border-radius: 0.75em;
+        transform-style: preserve-3d;
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    }
+    button.bbutton::before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        box-shadow: 0 0 0 2px, 0 0.75em 0 0;
+        transform: translate3d(0, 0.75em, -1em);
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    }
+    button.bbutton:hover{
+        transform: translate(0, 0.375em);
+    }
+    button.bbutton:hover::before{
+        transform: translate3D(0, 0.75em, -1em)
+    }
+    button.bbutton:active::before{
+        transform: translate3d(0, 0, -1em);
+        box-shadow: 0 0 0 2px, 0 0.25em 0 0;
+    }
+    .flowers{
+        width: 5%;
+        position: absolute;
+        
+    }
+
+  </style>
+
+  <body>
+    <div class="button-wrapper">
+        <button class="bbutton" onclick="myFunction()"> Press me</button>
+    </div>
+    <div id="flower-field">
+        flower field
+    </div>
+    
+    <!-- <footer>
+      <div>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer> -->
+    <script>
+        function myFunction() {
+            console.log("hello world!")
+            // generate ascii flowers around the webpage
+            let img = document.createElement('img');
+            img.src = 'images/dandelion.png';
+            img.style.setProperty('width', '5%', '');
+            img.className = 'flowers'
+            const newX = Math.random() * (window.innerWidth );
+            const newY = Math.random() * (window.innerHeight);
+            const newZ_index = parseInt(Math.random() * 10); // z-index from 1-10
+            img.style.left = newX + 'px';
+            img.style.top = newY + 'px';
+            img.style.zIndex = newZ_index;
+            document.getElementById('flower-field').appendChild(img);
+            console.log("flower added")
+        }
+    </script>
+  </body>
+</html>
+
+    
+    
+    
+
+
+      
