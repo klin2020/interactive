@@ -1,0 +1,88 @@
+* {
+    font-family: Optima, sans-serif;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+  fieldset {
+    border: 1px solid black;
+    margin: 0px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    /* display:inline-block; */
+  }
+  label {
+    display: block;
+  }
+  
+  .honeypot-field {
+    display: none;
+  }
+  
+  .form-elements {
+    border: 1px solid black;
+    background-image: url('images/paper.jpeg');
+  }
+  
+  li {
+    margin-bottom: 1em;
+  }
+  
+  .Timestamp {
+    /* removes timestamp on google sheet load */
+    display: none;
+  }
+
+  footer{
+    position: absolute;
+    bottom: 10px;
+  }
+
+  #popup-text{
+    display: none;
+    text-wrap: wrap;
+    width: 100px;
+  }
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next {font-size: 11px}
+}
+
+.flowers{
+    width: 5%;
+    position: absolute;
+    
+}

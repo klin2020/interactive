@@ -1,0 +1,28 @@
+{
+    "manifest_version" : 3,
+    "name" : "FlowerField",
+    "version" : "1.0",
+    "description" : "A field of flowers just for you!",
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self'"
+    },
+    "host_permissions" : ["<all_urls>"],
+    "permissions" : [
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "chrome_url_overrides" : {
+        "newtab" : "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches" : ["<all_urls>"],
+            "js" : ["content.js"]
+        }
+    ],
+    "web_accessible_resources" : [{
+        "matches" : ["<all_urls>"],
+        "resources" : ["images/dandelion.png"]
+    }]
+}

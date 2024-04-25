@@ -3,27 +3,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="flower field home" content="flower field home">
-  <title>Flower field home</title>
+    <meta name="person one" content="person one control center">
+  <title>I'm Here</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url('images/grass3.png');">
+<body style="background-image: url('images/grass.png');">
     <div>
-        <a href="here.html" style="font-size: 2.5rem;">here</a>
-    </div>
-    <br>
-    <div>
-        <a href="there.html" style="position: absolute; bottom: 10px; right: 10px;font-size: 2.5rem; ">there</a>
+       <a href="index.html"> <img src="images/barn.png" style="width: 5%; padding-left: 10px"> </a>
     </div>
 
+    <div id="flower-field">
+    </div>
     <footer style="position: absolute; bottom: 10px;">
         <img src="images/leaf.png" id="leaf" style="width: 50%">
         <div style="text-wrap: wrap; font-size: 1rem;" id="popup-text">
             This website posts and displays data from this <a href="https://docs.google.com/spreadsheets/d/1MznBGsJAyHo0Mm-sS7kxKojVwh-sly6lO5wOC4AbtD4/edit?usp=sharing">Google Sheet</a>.
-            Grass graphic from <a href="https://en.wikipedia.org/wiki/Bliss_%28image%29">here</a>
+            Grass graphic from <a href="https://www.reddit.com/r/PixelArt/comments/t5x3zz/grass/">here</a>
         </div>
     </footer>  
+    <!-- Submit the Form to Google Using "AJAX" -->
+    <script>
+        window.open("here_form.html", "example", 'width=520,height=390');
+    </script>
+    <script src="get-data.js"></script>
     <script src="flowers.js"></script>
 </body>
+
 </html>
