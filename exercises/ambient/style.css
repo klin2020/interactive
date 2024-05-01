@@ -1,0 +1,51 @@
+@keyframes colorfade{
+    0%{
+      filter: blur(100px);
+    }
+    20%{
+      filter: blur(70px);
+    }
+    36%{
+      filter: blur(30px);
+    }
+    43%{
+      filter: blur(13px);
+    }
+    50%{
+      filter: blur(0px);
+    }
+    63%{
+      filter: blur(20px);
+    }
+    78%{
+      filter: blur(45px);
+    }
+    81%{
+      filter: blur(69px);
+    }
+    100%{
+      filter: blur(100px);
+    }
+    
+  
+  }
+  .my-animation{
+    filter: blur(4px);
+    mix-blend-mode: difference;
+    animation-name: colorfade;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+  
+  .index-flower{
+    animation: rotate 7s linear infinite;
+  }
+  
+  @keyframes rotate{
+    from {
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }

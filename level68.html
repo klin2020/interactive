@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sheep and Wool Festival</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="images/icon.png"/></head>
+<link rel="stylesheet" href="styles.css">
+<body style="background-color: chartreuse;">
+    <div id="sheep-field">
+    </div>
+    <div>
+        <!-- return to home -->
+        <a href="project1.html"><img src=toys/lamb.png style ="width: 10%; position: absolute; bottom: 10px"></a>
+    </div>
+    <div>
+        <img src="images/sheep_talk.png" style="position: absolute; bottom: 15px; right: 10px; width: 30%; z-index: 1" onclick="show_text()">
+        <p style="font-size: 0.5rem; position: absolute; bottom: 0px; right: 10px; text-wrap: wrap;"><a href="https://sheepandwool.com/essentials/welcome/" target="__blank">more information here if you don't believe me...</a></p>
+    </div>
+</body>
+<script>
+    var images = [
+        "<img src='images/sheep/s1.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s2.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s3.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s4.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s5.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s6.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s7.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s8.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s9.jpg' class='sheep-img'>",
+        "<img src='images/sheep/s10.jpg' class='sheep-img'>",
+        // "<img src='images/sheep/sheep_poster.jpeg'>",
+    ]
+
+    function random_image(){
+        return Math.floor(Math.random() * images.length);
+    }
+
+    function add_image(){
+        var new_img = document.createElement('div');
+        new_img.innerHTML = images[random_image()];
+        new_img.className = 'sheep-div'
+        var random_width = Math.floor(Math.random() * (300 - 100 + 1) + 100);
+        var random_width_pixels = random_width + 'px';
+        new_img.style.width = random_width_pixels;
+        var field = document.getElementById('sheep-field');
+        field.prepend(new_img);
+        new_img.addEventListener('click', add_image);
+    }
+
+    function show_text(){
+        // window.open("sheep_festival.html", "New York State Sheep and Wool Festival 2023", 'width = 700, height = 800');
+        alert("THE DUTCHESS COUNTY SHEEP & WOOL GROWERS WELCOME YOU TO THE NEW YORK STATE SHEEP AND WOOL FESTIVAL\nALWAYS THE THIRD FULL WEEKEND IN OCTOBER\nOCTOBER 21, 2023 - 9am-5pm\nOCTOBER 22, 2023 - 9am-4pm\nDutchess County Fairgrounds\n6550 Spring Brook Ave., Rhinebeck, NY 12572")
+    }
+
+
+    add_image();
+</script>
+
+
+</html>

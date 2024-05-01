@@ -14,8 +14,12 @@ function getData(url) {
           handleData(response);
           console.log(response);
           growFlowers(response);
+          const d = new Date().toLocaleString();
+          const caption = '(today is ' + d.toString() + ')';
+          document.getElementById('caption').innerHTML = caption;
           resolve();
         });
+
 
       } else {
         // Request failed
@@ -44,6 +48,7 @@ function handleData(response) {
 }
 
 function plantSeeds(itm){
+  //on page load, generate all flowers at random positions
     var seeds = itm["seed_type"];
     //list of strings
     var arr = seeds.split(','); //divide into a list of flowers
@@ -70,13 +75,9 @@ function plantSeeds(itm){
         const newZ_index = parseInt(Math.random() * 10); // z-index from 1-10
         img.style.left = newX + 'px';
         img.style.top = newY + 'px';
-        img.style.zIndex = newZ_index;
-        document.getElementById('flower-field').appendChild(img);
+        img.style.zIndex = newZ_index; //randomize x, y, z positioning
+        document.getElementById('flower-field').appendChild(img); //append to flower-field div
         console.log("flower added");
-
-        //randomize number of that flower is generated
-        //randomize positioning
-        //add to page
     }); 
 }
 
@@ -85,6 +86,7 @@ getData(AppScriptUrl);
 
 
 function growFlowers(response){
+  //when flower is clicked, increases by 5% until it reaches >80px
     let ff = document.getElementsByClassName("flowers");
     console.log(ff.length)
     for(var i = 0; i < ff.length; i++){
@@ -101,10 +103,9 @@ function growFlowers(response){
             event.target.remove();
           }
         });
-        //pass in html img element
     }
-    console.log("flower field: ", ff);
-    console.log(ff.length)
+    // console.log("flower field: ", ff);
+    // console.log(ff.length)
 }  
 
 function harvestFlower(flower, response){
@@ -118,7 +119,8 @@ function harvestFlower(flower, response){
         alert('. . .'); //no message
       }
       else{
-        alert(response[i].message); //message planted with flower
+        // let mmessage = response[i].Timestamp + 
+        alert(response[i].Timestamp + "\n" + response[i].message); //message planted with flower
       }
       flower.remove(); //remove from HTML
       break; //jump out of loop

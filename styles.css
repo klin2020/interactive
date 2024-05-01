@@ -1,0 +1,85 @@
+#sheep_poster{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
+@keyframes flicker{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.flicker-image{
+    transition: opacity 0.5s ease;
+}
+.flicker-image:hover{
+    animation: flicker 0.1s infinite alternative;
+}
+
+
+ #canvas-body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    color: rgb(255, 0, 221);
+    background-image: url('images/construction_paper.jpeg');
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 2rem;
+ }
+
+
+#canvas-container{
+    height: 100%;
+    display: flex;
+}
+
+#toolbar{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 120px;
+}
+
+#toolbar *{
+    margin-bottom: 6px;
+}
+
+#toolbar label {
+    font-size: 1rem;
+}
+
+#toolbar input {
+    width: 100%;
+}
+
+#toolbar button {
+    background-color: rgb(255, 0, 221);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 2px;
+}
+
+.sheep-img{
+    max-width: 100%;
+    cursor: pointer;
+    filter: blur(16px);
+    transition: filter 0.5s ease;
+}
+.sheep-img:hover{
+    filter: blur(0);
+}
+.sheep-div{
+    display: inline-block;
+}
+
+

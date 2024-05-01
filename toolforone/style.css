@@ -2,87 +2,114 @@
     font-family: Optima, sans-serif;
     overflow: hidden;
   }
-  @media screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+
+fieldset {
+  border: 1px solid black;
+  margin: 0px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  /* display:inline-block; */
 }
-  fieldset {
-    border: 1px solid black;
-    margin: 0px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    /* display:inline-block; */
-  }
-  label {
-    display: block;
-  }
-  
-  .honeypot-field {
-    display: none;
-  }
-  
-  .form-elements {
-    border: 1px solid black;
-    background-image: url('images/paper.jpeg');
-  }
-  
-  li {
-    margin-bottom: 1em;
-  }
-  
-  .Timestamp {
-    /* removes timestamp on google sheet load */
-    display: none;
-  }
-
-  footer{
-    position: absolute;
-    bottom: 10px;
-  }
-
-  #popup-text{
-    display: none;
-    text-wrap: wrap;
-    width: 100px;
-  }
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+label {
+  display: block;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
+.honeypot-field {
+  display: none;
+}
+
+.form-elements {
+  border: 1px solid black;
+  background-image: url('images/paper.jpeg');
+}
+
+
+.Timestamp {
+  /* removes timestamp on google sheet load */
+  display: none;
+}
+
+footer{
   position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
+  bottom: 10px;
+}
+
+#popup-text{
+  display: none;
+  text-wrap: wrap;
+  width: 100%;
+}
+
+#caption{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  text-align: center;
   color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next {font-size: 11px}
 }
 
 .flowers{
-    width: 5%;
-    position: absolute;
-    
+  width: 5%;
+  position: absolute;
+  
+}
+
+@media screen and (max-width: 768px) {
+  body {
+      padding: 10px;
+  }
+}
+
+@keyframes colorfade{
+  0%{
+    filter: blur(100px);
+  }
+  20%{
+    filter: blur(70px);
+  }
+  36%{
+    filter: blur(30px);
+  }
+  43%{
+    filter: blur(13px);
+  }
+  50%{
+    filter: blur(0px);
+  }
+  63%{
+    filter: blur(20px);
+  }
+  78%{
+    filter: blur(45px);
+  }
+  81%{
+    filter: blur(69px);
+  }
+  100%{
+    filter: blur(100px);
+  }
+  
+
+}
+.my-animation{
+  filter: blur(4px);
+  mix-blend-mode: difference;
+  animation-name: colorfade;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.index-flower{
+  animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }

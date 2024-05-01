@@ -8,22 +8,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url('images/grass3.png');">
+<!-- style="background-image: url('images/grass3.png');" -->
+<body>
     <div>
-        <a href="here.html" style="font-size: 2.5rem;">here</a>
+        <a href="here.html" style="font-size: 2.5rem; z-index: 11;">here</a>
     </div>
-    <br>
     <div>
-        <a href="there.html" style="position: absolute; bottom: 10px; right: 10px;font-size: 2.5rem; ">there</a>
+        <a href="there.html" style="position: absolute; bottom: 10px; right: 10px;font-size: 2.5rem; z-index: 11;">there</a>
+    </div>
+    <footer style="position: absolute; width: 10%; bottom: 10px; z-index: 11;">
+        <img src="images/leaf.png" id="leaf" style="width: 50%; z-index: 11;">
+        <div style="text-wrap: wrap; font-size: 0.5rem; z-index: 12;" id="popup-text">
+            This website posts and displays data from this <a href="https://docs.google.com/spreadsheets/d/1MznBGsJAyHo0Mm-sS7kxKojVwh-sly6lO5wOC4AbtD4/edit?usp=sharing">Google Sheet</a>.
+            <!-- Grass graphic from <a href="https://en.wikipedia.org/wiki/Bliss_%28image%29">here</a> -->
+        </div>
+    </footer> 
+    <div class ="my-animation">
+        <div id="home-field">
+        </div>
     </div>
 
-    <footer style="position: absolute; bottom: 10px;">
-        <img src="images/leaf.png" id="leaf" style="width: 50%">
-        <div style="text-wrap: wrap; font-size: 1rem;" id="popup-text">
-            This website posts and displays data from this <a href="https://docs.google.com/spreadsheets/d/1MznBGsJAyHo0Mm-sS7kxKojVwh-sly6lO5wOC4AbtD4/edit?usp=sharing">Google Sheet</a>.
-            Grass graphic from <a href="https://en.wikipedia.org/wiki/Bliss_%28image%29">here</a>
-        </div>
-    </footer>  
     <script src="flowers.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

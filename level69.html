@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DIY Hand Turkey</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="images/icon.png"/></head>
+<link rel="stylesheet" href="styles.css">
+
+<body id="canvas-body">
+    <section id="canvas-container">
+        <div id="toolbar">
+            <p>Don't be shy, draw a <a href="https://www.instructables.com/Make-a-Hand-Turkey/">Hand Turkey</a></p>
+            <label for="stroke">Choose Color</label>
+            <input id ="stroke" name="stroke" type="color">
+            <label for="lineWidth">Line Width</label>
+            <input id="lineWidth" name="lineWidth" type="number" value="5">
+            <button id="clear">Clear</button>
+            <button id="save">Save</button>
+        </div>
+        <div class="drawing-board">
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </section>
+    <a href="project1.html"><img src="toys/turkey.png" style="position: absolute; bottom: 5px; left: 5px; width: 7%"></a>
+
+</body>
+<script src="canvas.js"></script>
+
+</html>

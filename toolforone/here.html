@@ -7,24 +7,25 @@
   <title>I'm Here</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body style="background-image: url('images/grass.png');">
+<!-- style="background-image: url('images/grass.png');" -->
+<body style="background-color: darkolivegreen">
     <div>
        <a href="index.html"> <img src="images/barn.png" style="width: 5%; padding-left: 10px"> </a>
     </div>
-
-    <div id="flower-field">
+    <div id="caption">
     </div>
     <footer style="position: absolute; bottom: 10px;">
         <img src="images/leaf.png" id="leaf" style="width: 50%">
-        <div style="text-wrap: wrap; font-size: 1rem;" id="popup-text">
+        <div style="text-wrap: wrap; font-size: 0.5rem;" id="popup-text">
             This website posts and displays data from this <a href="https://docs.google.com/spreadsheets/d/1MznBGsJAyHo0Mm-sS7kxKojVwh-sly6lO5wOC4AbtD4/edit?usp=sharing">Google Sheet</a>.
             Grass graphic from <a href="https://www.reddit.com/r/PixelArt/comments/t5x3zz/grass/">here</a>
         </div>
     </footer>  
+    <div id="flower-field">
+    </div>
     <!-- Submit the Form to Google Using "AJAX" -->
     <script>
-        window.open("here_form.html", "example", 'width=520,height=390');
+        window.open("here_form.html", "example", 'width=530,height=420');
     </script>
     <script src="get-data.js"></script>
     <script src="flowers.js"></script>
