@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" href="images/icon.png"/>
 </head>
 <style>
+    body{
+        font-family:'Gill Sans', sans-serif;
+    }
     .left-column{
         position: absolute;
         left: 0;
@@ -14,6 +17,8 @@
         height: 100vh;
         overflow-x: hidden;
         overflow-y: scroll;
+        /* background-image: url("images/marble.png");
+        background-size: 10em; */
     }
     .left-column img{
         width: 75%; 
@@ -31,9 +36,18 @@
         position: absolute;
         left: 20%;
     }
+    .footer{
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        position: fixed;
+        left: 20%;
+        padding-bottom: 10px;
+    }
 </style>
-<body style="font-family: Didot, serif;">
+<body>
     <div class="left-column">
+        <img src="images/icon.png" style="position: fixed; bottom: 0px; width: 20%; padding-bottom: 0px">
         <ul>
             <li><a href="level61.html"><img src="toys/clam.png"></a></li>
             <li><a href="level62.html"><img src="toys/beef.png"></a></li>
@@ -47,16 +61,12 @@
         </ul>
     </div>
     <div class="main-column">
-        <span style="font-size: 10rem; position: relative">A</span>
-        <span style="font-size: 10rem; position: relative">Vegetarian's</span>
-        <span style="font-size: 10rem; position: relative">Guide To</span>
-        <span style="font-size: 10rem; position: relative">Meat</span>
-
-
-
-        <span style="position: absolute; bottom: 20px; right: 10px">Karen's Web Zine</span>
-        <span style="position: absolute; bottom: 5px; right: 10px"><a href = "project1index.html" target="__blank">Previous Versions</a></span>
-
+        <span style="font-size: 11rem; position: relative; white-space: pre-line; line-height: 0.88;">a vegetarian's guide to meat 
+        </span>
+    </div>
+    <div class="footer">
+            karen's web zine
+            <a href = "project1index.html" target="__blank">(previous lives)</a>
     </div>
 </body>
 </html>
